@@ -1,9 +1,9 @@
 /** Map setup start **/
 const myIcon = L.icon({iconUrl: 'images/icon-location.svg',iconAnchor: [23, 56]});
-const mymap = L.map('mapCont', {attributionControl: false, zoomControl: false}).setView([28.61, 77.20], 12);
+const mymap = L.map('mapCont', {zoomControl: false}).setView([28.61, 77.20], 12);
 const marker = L.marker(mymap.getCenter(), {icon: myIcon}).addTo(mymap);
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const tiles = L.tileLayer(tileUrl);
+const tiles = L.tileLayer(tileUrl, {attribution: `By <a href="https://praneetdixit.me" target="_blank">Praneet Dixit</a>`});
 tiles.addTo(mymap);
 /** Map setup end **/
 

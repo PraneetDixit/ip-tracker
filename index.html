@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+
+	<link rel="stylesheet" href="style.css">
+	
+	<style id="d-n">
+		.v-none{
+			visibility: hidden;
+		}
+	</style>
+  
+  <title>Frontend Mentor | IP Address Tracker | Praneet Dixit</title>
+</head>
+<body>
+	<div id="loader"></div>
+	<header class="v-none">
+		<h1 id="title">IP Address Tracker</h1>
+		<div id="searchBox">
+			<input type="text" role="search" id="ipHolder" placeholder="Search for any IP address or domain">
+			<button id="search"></button>
+		</div>
+		<div id="info">
+			<div class="infoField">
+				<div class="fieldTitle">IP ADDRESS</div>
+				<div class="fieldDetail">111.111.111.111</div>
+			</div>
+			<div class="infoField">
+				<div class="fieldTitle">LOCATION</div>
+				<div class="fieldDetail">Rajasthan, IN <br> 327001</div>
+			</div>
+			<div class="infoField">
+				<div class="fieldTitle">TIMEZONE</div>
+				<div class="fieldDetail">GMT -5:30</div>
+			</div>
+			<div class="infoField">
+				<div class="fieldTitle">ISP</div>
+				<div class="fieldDetail">Jio Telecom</div>
+			</div>
+		</div>
+	</header>
+	<main id="mapCont" class="v-none"></main>
+	
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+	
+	<script src="script.js"></script>
+	<script>
+		checkIP("")
+			.then(info => {processInfo(info);start();});
+	</script>
+</body>
+</html>

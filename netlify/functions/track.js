@@ -8,5 +8,8 @@ exports.handler = async (event, context) => {
     method: 'GET'
   }
   let req = await http.request(options);
-  return req;
+  return {
+    statusCode: 200,
+    body: req
+  };
 }

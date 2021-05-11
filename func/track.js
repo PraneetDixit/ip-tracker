@@ -12,9 +12,9 @@ exports.handler = async (event, context) => {
         city: req.city,
         state: req.region,
         country: req.country_code
-      },
+      }//,
       //timezone: req.timezone.gmt_offset,
-      isp: req.connection.isp_name
+      //isp: req.connection.isp_name
     };
     return {
       statusCode: 200,

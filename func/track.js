@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
 //     };
     return {
       statusCode: 200,
-      body: res.toString();
+      body: res.toString()
     };
   } catch (error) {
     return {

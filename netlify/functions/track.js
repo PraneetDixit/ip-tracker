@@ -1,7 +1,7 @@
-const http = require("http");
+const https = require("https");
 
 exports.handler = async (event, context) => {
-  http.get('https://geo.ipify.org/api/v1?apiKey=at_TEYGZ5THakrXcYjy5H5MZLVnbuFgl&ipAddress=1.1.1.1', (resp) => {
+  https.get('https://geo.ipify.org/api/v1?apiKey=at_TEYGZ5THakrXcYjy5H5MZLVnbuFgl&ipAddress=1.1.1.1', (resp) => {
     let data = '';
 
     resp.on('data', (chunk) => {

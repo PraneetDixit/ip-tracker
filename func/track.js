@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
   }
   
   try {
-    const { data } = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${getIP()}`);
+    const { data } = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${ipAdd}`);
     const res = {
       ip: data.ip_address,
       location : {

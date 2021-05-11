@@ -20,4 +20,8 @@ exports.handler = async (event, context) => {
       body: `Error:${err.message}`
     }
   });
+  return {
+    statusCode: 500,
+    body: "Something went wrong"
+  }
 }

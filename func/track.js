@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
       return ipAdd;
     }else{
       if(event.headers["x-forwarded-for"]){
-        return event.headers["x-forwarded-for"].split(",").shift();
+        return event.headers["x-forwarded-for"].split(",")[0]
       }else if(event.headers["client-ip"]){
         return event.headers["client-ip"];
       }else{
@@ -23,6 +23,7 @@ exports.handler = async (event, context) => {
       location : {
         lat: data.latitude,
         lng: data.longitude,
+        pin: data.postal_code ? data.postal_code : "",
         city: data.city ? data.city : "",
         state: data.region ? data.region : "",
         country: data.country_code

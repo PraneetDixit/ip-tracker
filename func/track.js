@@ -9,8 +9,8 @@ exports.handler = async (event, context) => {
       location : {
         lat: data.latitude,
         lng: data.longitude,
-        city: data.city,
-        state: data.region,
+        city: data.city ? data.city : "",
+        state: data.region ? data.region : "",
         country: data.country_code
       },
       timezone: data.timezone.gmt_offset,

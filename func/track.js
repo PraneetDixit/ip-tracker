@@ -3,22 +3,22 @@ const axios = require("axios");
 exports.handler = async (event, context) => {
   const { ipAdd } = event.queryStringParameters;
   try {
-    const { timezone } = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${ipAdd}`);
-//     const res = {
-//       ip: req.ip_address,
-//       location : {
-//         lat: req.latitude,
-//         lng: req.longitude,
-//         city: req.city,
-//         state: req.region,
-//         country: req.country_code
-//       },
-//       timezone: req.timezone.gmt_offset,
-//       isp: req.connection.isp_name
-//     };
+    const { data } = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${ipAdd}`);
+    const res = {
+      ip: data.ip_address,
+      location : {
+        lat: data.latitude,
+        lng: data.longitude,
+        city: data.city,
+        state: data.region,
+        country: data.country_code
+      },
+      timezone: data.timezone.gmt_offset,
+      isp: data.connection.isp_name
+    };
     return {
       statusCode: 200,
-      body: JSON.stringify(timezone)
+      body: JSON.stringify(res)
     };
   } catch (error) {
     return {

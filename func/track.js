@@ -23,7 +23,7 @@ exports.handler = async (event, context) => {
   } catch (error) {*/
     return {
       statusCode: 500,
-      body: process.env.API_KEY
+      body: `${process.env.API_KEY}`
     }
   //}
 }

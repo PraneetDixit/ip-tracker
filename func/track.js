@@ -3,7 +3,7 @@ const axios = require("axios");
 exports.handler = async (event, context) => {
   const { ipAdd } = event.queryStringParameters;
   try {
-    const req = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}?ip_address=${ipAdd}`);
+    const req = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${ipAdd}`);
 //     const res = {
 //       ip: req.ip_address,
 //       location : {

@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
   }).on("error", (err) => {
     return {
       statusCode: 500,
-      body: `Error:${err.message}`;
+      body: `Error:${err.message}`
     }
   });
 }

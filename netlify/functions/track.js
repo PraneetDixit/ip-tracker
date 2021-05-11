@@ -10,6 +10,6 @@ exports.handler = async (event, context) => {
   let req = await http.request(options);
   return {
     statusCode: 200,
-    body: req
+    body: JSON.stringify(req)
   };
 }

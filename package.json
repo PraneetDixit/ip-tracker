@@ -1,0 +1,12 @@
+  
+{
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "description": "IP address tracker",
+  "main": "index.js",
+  "author": "PraneetDixit",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+  }
+}

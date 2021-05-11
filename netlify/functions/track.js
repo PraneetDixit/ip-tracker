@@ -1,15 +1,23 @@
 const http = require("http");
 
 exports.handler = async (event, context) => {
-  const options = {
-    hostname: 'https://geo.ipify.org/',
-    port: 443,
-    path: '/api/v1?apiKey=at_CY48XydVQZP15tmrwYEgdGtWTsMLQ&ipAddress=8.8.8.8',
-    method: 'GET'
-  }
-  let req = await http.request(options);
-  return {
-    statusCode: 200,
-    body: JSON.stringify(req)
-  };
+  https.get('https://geo.ipify.org/api/v1?apiKey=at_TEYGZ5THakrXcYjy5H5MZLVnbuFgl&ipAddress=1.1.1.1', (resp) => {
+    let data = '';
+
+    resp.on('data', (chunk) => {
+      data += chunk;
+    });
+
+    resp.on('end', () => {
+      return {
+        statusCode: 200,
+        body: JSON.stringify(data)
+      };
+    });
+  }).on("error", (err) => {
+    return {
+      statusCode: 500,
+      body: `Error:${err.message}`;
+    }
+  });
 }

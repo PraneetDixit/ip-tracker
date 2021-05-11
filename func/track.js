@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
   const { ipAdd } = event.queryStringParameters;
   try {
     const req = await axios.get(`https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.API_KEY}&ip_address=${ipAdd}`);
-    const res = {
+    /*const res = {
       ip: req.ip_address,
       location : {
         lat: req.latitude,
@@ -12,13 +12,13 @@ exports.handler = async (event, context) => {
         city: req.city,
         state: req.region,
         country: req.country_code
-      }//,
-      //timezone: req.timezone.gmt_offset,
-      //isp: req.connection.isp_name
-    };
+      },
+      timezone: req.timezone.gmt_offset,
+      isp: req.connection.isp_name
+    };*/
     return {
       statusCode: 200,
-      body: JSON.stringify(res)
+      body: JSON.stringify(req)
     };
   } catch (error) {
     return {

@@ -23,9 +23,9 @@ exports.handler = async (event, context) => {
       location : {
         lat: data.latitude,
         lng: data.longitude,
-        pin: data.postal_code ? data.postal_code : "",
-        city: data.city ? data.city : "",
-        state: data.region ? data.region : "",
+        pin: data.postal_code,
+        city: data.city,
+        state: data.region,
         country: data.country_code
       },
       timezone: data.timezone.gmt_offset,
@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     };
     return {
       statusCode: 200,
-      body: JSON.stringify(res)
+      body: JSON.stringify(data)
     };
   } catch (error) {
     return {

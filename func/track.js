@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
         state: req.region,
         country: req.country_code
       },
-      timezone: req.timezone.gmt_offset,
+      //timezone: req.timezone.gmt_offset,
       isp: req.connection.isp_name
     };
     return {
